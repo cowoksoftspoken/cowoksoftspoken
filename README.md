@@ -13,7 +13,7 @@ I'am a student
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=cowoksoftspoken&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
 
 ## 🏆 GitHub Trophies
-![](https://github-profile-trophy.vercel.app/?username=Setyabudi90&theme=radical&no-frame=true&no-bg=false&margin-w=4)
+![](https://github-profile-trophy.vercel.app/?username=cowoksoftspoken&theme=radical&no-frame=true&no-bg=true&margin-w=4)
 
 ### 🔝 Top Contributed Repo
 ![](https://github-contributor-stats.vercel.app/api?username=cowoksoftspoken&limit=5&theme=dark&combine_all_yearly_contributions=true)
