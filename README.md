@@ -24,6 +24,7 @@
   <img src="https://skillicons.dev/icons?i=nodejs" height="60" alt="nodejs logo" />
   <img src="https://skillicons.dev/icons?i=mysql" height="60" alt="mysql logo" />
   <img src="https://skillicons.dev/icons?i=express" height="60" alt="express logo" />
+  <img src="https://skillicons.dev/icons?i=git" height="60" alt="git logo" />
 </div>
 
 ###
