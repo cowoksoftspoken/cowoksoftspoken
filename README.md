@@ -25,7 +25,7 @@
   <img src="https://skillicons.dev/icons?i=mysql" height="60" alt="mysql logo" />
   <img src="https://skillicons.dev/icons?i=express" height="60" alt="express logo" />
   <img src="https://skillicons.dev/icons?i=git" height="60" alt="git logo" />
-  <img src="https://skillicons.dev/icons?i=webrtc" height="60" alt="webrtc logo" />
+  <img src="https://img.shields.io/badge/WebRTC-20232A?style=for-the-badge&logo=webrtc&logoColor=61DAFB" height="28" />
 </div>
 
 ###
