@@ -33,6 +33,8 @@
   <img width="12" /> 
   <img src="https://skillicons.dev/icons?i=firebase" height="60" alt="firebase logo" />
   <img width="12" /> 
+  <img src="https://skillicons.dev/icons?i=pandas" height="60" alt="pandas logo" />
+  <img width="12" />
 </div>
 
 ###
