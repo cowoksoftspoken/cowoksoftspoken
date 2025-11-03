@@ -1,4 +1,4 @@
-<h1 align="center"><code>Hey there 👋 I'm Inggrit Setya</code></h1> <p align="center"><code>💻 Software Engineering Student @ SMK Krian 1 | ☕ Coffee & Code Enthusiast | Building cool stuff with Next.js & Python 🚀</code></p>
+<h1 align="center"><code>Hey there 👋 I'm Inggrit Setya Budi</code></h1> <p align="center"><code>💻 Software Engineering Student @ SMK Krian 1 | ☕ Coffee & Code Enthusiast | Building cool stuff with Next.js & Python 🚀</code></p>
 
 ###
 
