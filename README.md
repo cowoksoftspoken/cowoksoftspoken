@@ -8,13 +8,15 @@
   <img src="https://skillicons.dev/icons?i=css" height="60" alt="css logo" /> 
   <img width="12" /> 
   <img src="https://skillicons.dev/icons?i=js" height="60" alt="javascript logo" /> 
-  <img width="12" /> <img src="https://skillicons.dev/icons?i=ts" height="60" alt="typescript logo" /> 
+  <img width="12" /> 
+  <img src="https://skillicons.dev/icons?i=ts" height="60" alt="typescript logo" /> 
   <img width="12" /> 
   <img src="https://skillicons.dev/icons?i=nextjs" height="60" alt="nextjs logo" /> 
   <img width="12" /> 
   <img src="https://skillicons.dev/icons?i=react" height="60" alt="react logo" /> 
   <img width="12" /> 
-  <img src="https://skillicons.dev/icons?i=tailwind" height="60" alt="tailwindcss logo" /> <img width="12" /> 
+  <img src="https://skillicons.dev/icons?i=tailwind" height="60" alt="tailwindcss logo" />
+  <img width="12" /> 
   <img src="https://skillicons.dev/icons?i=cpp" height="60" alt="cpp logo" /> 
   <img width="12" /> 
   <img src="https://skillicons.dev/icons?i=rust" height="60" alt="rust logo" /> 
@@ -33,8 +35,6 @@
   <img width="12" /> 
   <img src="https://skillicons.dev/icons?i=firebase" height="60" alt="firebase logo" />
   <img width="12" /> 
-  <img src="https://skillicons.dev/icons?i=pandas" height="60" alt="pandas logo" />
-  <img width="12" />
 </div>
 
 ###
