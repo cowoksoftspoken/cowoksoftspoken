@@ -20,12 +20,19 @@
   <img src="https://skillicons.dev/icons?i=rust" height="60" alt="rust logo" /> 
   <img width="12" /> 
   <img src="https://skillicons.dev/icons?i=py" height="60" alt="python logo" />
+  <img width="12" /> 
   <img src="https://skillicons.dev/icons?i=prisma" height="60" alt="prisma logo" />
+  <img width="12" /> 
   <img src="https://skillicons.dev/icons?i=nodejs" height="60" alt="nodejs logo" />
+  <img width="12" /> 
   <img src="https://skillicons.dev/icons?i=mysql" height="60" alt="mysql logo" />
+  <img width="12" /> 
   <img src="https://skillicons.dev/icons?i=express" height="60" alt="express logo" />
+  <img width="12" /> 
   <img src="https://skillicons.dev/icons?i=git" height="60" alt="git logo" />
+  <img width="12" /> 
   <img src="https://skillicons.dev/icons?i=firebase" height="60" alt="firebase logo" />
+  <img width="12" /> 
 </div>
 
 ###
