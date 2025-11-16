@@ -35,7 +35,7 @@
   <img width="12" /> 
   <img src="https://skillicons.dev/icons?i=firebase" height="60" alt="firebase logo" />
   <img width="12" /> 
-  <img src="https://skillicons.dev/icons?i=pandas" height="60" alt="pandas logo" />
+  <img src="https://skillicons.dev/icons?i=bun" height="60" alt="bun logo" />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=scikitlearn" height="60" alt="sklearn logo" />
 </div>
