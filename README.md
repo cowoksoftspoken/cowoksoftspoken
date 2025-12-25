@@ -59,10 +59,8 @@
 ###
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=cowoksoftspoken&theme=dracula&border_radius=5" height="150" alt="streak graph" /> 
-  <br><br>
-  <img src="https://github-trophies.vercel.app/?username=cowoksoftspoken" height="150" alt="trophy graph" />
-</div>
+  <a href="https://discord.com/users/" target="_blank">https://setya.biz.id</a>
+ </div>
 
 ###
 
