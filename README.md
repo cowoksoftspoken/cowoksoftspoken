@@ -59,7 +59,7 @@
 ###
 
 <div align="center">
-  <a href="https://discord.com/users/" target="_blank">https://setya.biz.id</a>
+  <a href="https://setya.biz.id" style="font-size: 1rem;" target="_blank">https://setya.biz.id</a>
  </div>
 
 ###
