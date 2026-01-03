@@ -58,9 +58,9 @@
 
 ###
 
-<div align="center">
-  ## 🌐 [setya.biz.id](https://setya.biz.id)
- </div>
+<h2 align="center">
+  <a href="https://setya.biz.id" target="_blank">🌐 setya.biz.id</a>
+</h2>
 
 ###
 
