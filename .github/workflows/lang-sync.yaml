@@ -13,17 +13,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Aggregate languages from all repos
-        env:
+      - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python << 'EOF'
           import requests
           import os
           from collections import defaultdict
+
+          EXCLUDED_LANGS = {
+              "Jupyter Notebook",
+              "HTML",
+              "CSS",
+              "Shell",
+              "PowerShell",
+              "Batchfile",
+              "CMake",
+              "Inno Setup",
+              "Perl"
+          }
+
+          TOP_N = 5
 
           token = os.environ["GITHUB_TOKEN"]
           user = "${{ github.repository_owner }}"
@@ -63,31 +75,34 @@ jobs:
 
               data = r.json()
               for lang, size in data.items():
-                  langs[lang] += size
+                  if lang not in EXCLUDED_LANGS:
+                      langs[lang] += size
 
           if not langs:
-              print("No language data found.")
               exit(0)
 
-          total = sum(langs.values())
+          top_langs = sorted(
+              langs.items(),
+              key=lambda x: x[1],
+              reverse=True
+          )[:TOP_N]
+
+          total = sum(size for _, size in top_langs)
 
           lines = ["```txt"]
-          for lang, size in sorted(langs.items(), key=lambda x: x[1], reverse=True):
+          for lang, size in top_langs:
               pct = size / total * 100
               bar = "█" * int(pct // 2)
               lines.append(f"{lang:<12} {bar:<25} {pct:5.2f} %")
           lines.append("```")
 
           content = "\n".join(lines)
-          
+
           with open("README.md", "r", encoding="utf-8") as f:
               readme = f.read()
 
           start = "<!-- LANG-STATS:START -->"
           end = "<!-- LANG-STATS:END -->"
-
-          if start not in readme or end not in readme:
-              raise RuntimeError("LANG-STATS markers not found in README.md")
 
           new_readme = (
               readme.split(start)[0]
@@ -99,12 +114,9 @@ jobs:
 
           with open("README.md", "w", encoding="utf-8") as f:
               f.write(new_readme)
-
-          print("README updated successfully.")
           EOF
 
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v9
+      - uses: EndBug/add-and-commit@v9
         with:
-          message: "chore: sync GitHub language stats"
+          message: "chore: sync language stats"
           add: "README.md"
