@@ -1,4 +1,4 @@
-name: Sync GitHub Languages
+name: Sync GitHub Language Stats
 
 on:
   schedule:
@@ -9,43 +9,85 @@ permissions:
   contents: write
 
 jobs:
-  sync-langs:
+  sync-languages:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Fetch language stats
-        run: |
-          curl -s \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            https://api.github.com/repos/${{ github.repository }}/languages \
-            > languages.json
-
-      - name: Generate README section
+      - name: Aggregate languages from all repos
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python << 'EOF'
-          import json
+          import requests
+          import os
+          from collections import defaultdict
 
-          with open("languages.json") as f:
-              data = json.load(f)
+          token = os.environ["GITHUB_TOKEN"]
+          user = "${{ github.repository_owner }}"
 
-          total = sum(data.values())
+          headers = {
+              "Authorization": f"Bearer {token}",
+              "Accept": "application/vnd.github+json"
+          }
+
+          repos = []
+          page = 1
+          while True:
+              r = requests.get(
+                  f"https://api.github.com/users/{user}/repos",
+                  headers=headers,
+                  params={"per_page": 100, "page": page}
+              )
+              data = r.json()
+              if not data:
+                  break
+              repos.extend(data)
+              page += 1
+
+          langs = defaultdict(int)
+
+          for repo in repos:
+              if repo.get("fork"):
+                  continue
+
+              lang_url = repo.get("languages_url")
+              if not lang_url:
+                  continue
+
+              r = requests.get(lang_url, headers=headers)
+              if r.status_code != 200:
+                  continue
+
+              data = r.json()
+              for lang, size in data.items():
+                  langs[lang] += size
+
+          if not langs:
+              print("No language data found.")
+              exit(0)
+
+          total = sum(langs.values())
 
           lines = ["```txt"]
-          for lang, size in sorted(data.items(), key=lambda x: x[1], reverse=True):
+          for lang, size in sorted(langs.items(), key=lambda x: x[1], reverse=True):
               pct = size / total * 100
               bar = "█" * int(pct // 2)
               lines.append(f"{lang:<12} {bar:<25} {pct:5.2f} %")
           lines.append("```")
 
           content = "\n".join(lines)
-
-          with open("README.md") as f:
+          
+          with open("README.md", "r", encoding="utf-8") as f:
               readme = f.read()
 
           start = "<!-- LANG-STATS:START -->"
           end = "<!-- LANG-STATS:END -->"
+
+          if start not in readme or end not in readme:
+              raise RuntimeError("LANG-STATS markers not found in README.md")
 
           new_readme = (
               readme.split(start)[0]
@@ -55,11 +97,14 @@ jobs:
               + readme.split(end)[1]
           )
 
-          with open("README.md", "w") as f:
+          with open("README.md", "w", encoding="utf-8") as f:
               f.write(new_readme)
+
+          print("README updated successfully.")
           EOF
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
         with:
-          message: "chore: sync language stats with GitHub"
+          message: "chore: sync GitHub language stats"
+          add: "README.md"
