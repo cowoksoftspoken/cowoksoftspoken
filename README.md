@@ -60,6 +60,8 @@
 
 <h2 align="center">
   <a href="https://setya.biz.id" target="_blank">https://setya.biz.id</a>
+  <!-- LANG-STATS:START -->
+  <!-- LANG-STATS:END -->
 </h2>
 
 ###
