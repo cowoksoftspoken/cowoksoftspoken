@@ -63,7 +63,7 @@
 </h2>
 ---
  <!-- LANG-STATS:START -->
-```txt
+```text
 JavaScript   ██████████████████        36.70 %
 Rust         ████████████████          32.09 %
 TypeScript   █████████████             27.30 %
