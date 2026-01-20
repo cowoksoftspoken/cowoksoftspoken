@@ -65,7 +65,6 @@
 ---
 
 <!--START_SECTION:github-stats-->
-![Top Langs](./github-stats.svg)
 <!--END_SECTION:github-stats-->
 
 ###
