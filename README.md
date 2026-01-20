@@ -61,9 +61,11 @@
 <h2 align="center">
   <a href="https://setya.biz.id" target="_blank">https://setya.biz.id</a>
 </h2>
+
 ---
 
 <!--START_SECTION:github-stats-->
+![Top Langs](./github-stats.svg)
 <!--END_SECTION:github-stats-->
 
 ###
