@@ -16,7 +16,7 @@ jobs:
 
       - name: Generate GitHub stats
         run: |
-          curl -s https://github-readme-stats.vercel.app/api/top-langs/?username=<USERNAME>&layout=compact&hide=other&langs_count=5 -o github-stats.txt
+          curl -s https://github-readme-stats.vercel.app/api/top-langs/?username=cowoksoftspoken&layout=compact&hide=other&langs_count=5 -o github-stats.txt
           echo "<!--START_SECTION:github-stats-->" > tmp.md
           cat github-stats.txt >> tmp.md
           echo "<!--END_SECTION:github-stats-->" >> tmp.md
