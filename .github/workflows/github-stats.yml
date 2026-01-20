@@ -14,16 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Generate GitHub stats
+      - name: Generate GitHub Top Languages SVG
         run: |
-          curl -s https://github-readme-stats.vercel.app/api/top-langs/?username=cowoksoftspoken&layout=compact&hide=other&langs_count=5 -o github-stats.txt
-          echo "<!--START_SECTION:github-stats-->" > tmp.md
-          cat github-stats.txt >> tmp.md
-          echo "<!--END_SECTION:github-stats-->" >> tmp.md
-          awk 'BEGIN{found=0} /<!--START_SECTION:github-stats-->/ {found=1; print; next} /<!--END_SECTION:github-stats-->/ {found=0; print; next} !found {print}' README.md >> tmp.md
-          mv tmp.md README.md
+          curl -s "https://github-readme-stats.vercel.app/api/top-langs/?username=cowoksoftspoken&layout=compact&hide=other&langs_count=5" > github-stats.svg
 
-      - uses: EndBug/add-and-commit@v9
+      - name: Commit updated stats
+        uses: EndBug/add-and-commit@v9
         with:
           message: "chore: update GitHub stats"
-          add: "README.md"
+          add: "github-stats.svg"
