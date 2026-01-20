@@ -1,0 +1,29 @@
+name: Update GitHub Stats
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate GitHub stats
+        run: |
+          curl -s https://github-readme-stats.vercel.app/api/top-langs/?username=<USERNAME>&layout=compact&hide=other&langs_count=5 -o github-stats.txt
+          echo "<!--START_SECTION:github-stats-->" > tmp.md
+          cat github-stats.txt >> tmp.md
+          echo "<!--END_SECTION:github-stats-->" >> tmp.md
+          awk 'BEGIN{found=0} /<!--START_SECTION:github-stats-->/ {found=1; print; next} /<!--END_SECTION:github-stats-->/ {found=0; print; next} !found {print}' README.md >> tmp.md
+          mv tmp.md README.md
+
+      - uses: EndBug/add-and-commit@v9
+        with:
+          message: "chore: update GitHub stats"
+          add: "README.md"
