@@ -63,13 +63,8 @@
 </h2>
 ---
 
-<!--START_SECTION:waka-->
-
-```txt
-No activity tracked
-```
-
-<!--END_SECTION:waka-->
+<!--START_SECTION:github-stats-->
+<!--END_SECTION:github-stats-->
 
 ###
 
