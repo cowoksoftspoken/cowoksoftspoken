@@ -62,15 +62,9 @@
   <a href="https://setya.biz.id" target="_blank">https://setya.biz.id</a>
 </h2>
 ---
- <!-- LANG-STATS:START -->
-```text
-JavaScript   ██████████████████        36.70 %
-Rust         ████████████████          32.09 %
-TypeScript   █████████████             27.30 %
-C++          █                          3.36 %
-Python                                  0.55 %
-```
-<!-- LANG-STATS:END -->
+
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
 
 ###
 
