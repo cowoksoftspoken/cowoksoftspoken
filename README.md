@@ -62,6 +62,21 @@
   <a href="https://setya.biz.id" target="_blank">https://setya.biz.id</a>
   <!-- LANG-STATS:START -->
 ```txt
+Jupyter Notebook █████████████████████████████████ 66.24 %
+JavaScript   █████                     11.08 %
+Rust         ████                       9.69 %
+TypeScript   ████                       8.25 %
+HTML         █                          2.09 %
+C++                                     1.01 %
+CSS                                     0.82 %
+Shell                                   0.37 %
+Python                                  0.17 %
+PowerShell                              0.07 %
+Java                                    0.06 %
+Perl                                    0.06 %
+Inno Setup                              0.06 %
+CMake                                   0.02 %
+Batchfile                               0.01 %
 ```
 <!-- LANG-STATS:END -->
 </h2>
