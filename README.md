@@ -60,7 +60,9 @@
 
 <h2 align="center">
   <a href="https://setya.biz.id" target="_blank">https://setya.biz.id</a>
-  <!-- LANG-STATS:START -->
+</h2>
+---
+ <!-- LANG-STATS:START -->
 ```txt
 Jupyter Notebook █████████████████████████████████ 66.24 %
 JavaScript   █████                     11.08 %
@@ -79,7 +81,6 @@ CMake                                   0.02 %
 Batchfile                               0.01 %
 ```
 <!-- LANG-STATS:END -->
-</h2>
 
 ###
 
