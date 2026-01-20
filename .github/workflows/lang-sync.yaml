@@ -1,0 +1,65 @@
+name: Sync GitHub Languages
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-langs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch language stats
+        run: |
+          curl -s \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/${{ github.repository }}/languages \
+            > languages.json
+
+      - name: Generate README section
+        run: |
+          python << 'EOF'
+          import json
+
+          with open("languages.json") as f:
+              data = json.load(f)
+
+          total = sum(data.values())
+
+          lines = ["```txt"]
+          for lang, size in sorted(data.items(), key=lambda x: x[1], reverse=True):
+              pct = size / total * 100
+              bar = "█" * int(pct // 2)
+              lines.append(f"{lang:<12} {bar:<25} {pct:5.2f} %")
+          lines.append("```")
+
+          content = "\n".join(lines)
+
+          with open("README.md") as f:
+              readme = f.read()
+
+          start = "<!-- LANG-STATS:START -->"
+          end = "<!-- LANG-STATS:END -->"
+
+          new_readme = (
+              readme.split(start)[0]
+              + start + "\n"
+              + content + "\n"
+              + end
+              + readme.split(end)[1]
+          )
+
+          with open("README.md", "w") as f:
+              f.write(new_readme)
+          EOF
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: "chore: sync language stats with GitHub"
