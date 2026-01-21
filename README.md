@@ -56,13 +56,9 @@
  </a>
 </div>
 
----
-
 <h2 align="center">
   <a href="https://setya.biz.id" target="_blank">https://setya.biz.id</a>
 </h2>
-
----
 
 <picture>
  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/cowoksoftspoken/cowoksoftspoken/output/pacman-contribution-graph-dark.svg"> 
