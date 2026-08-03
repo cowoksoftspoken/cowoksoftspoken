@@ -31,7 +31,7 @@
 
 +----------------------------------------------+
 |             INGGRIT SETYA BUDI               |
-|            SOFTWARE ENGINEERING              |
+|      Software Engineer | AI Enthusiast       |
 |      NEXT.JS + PYTHON // COFFEE + CODE       |
 +----------------------------------------------+
 </pre>
